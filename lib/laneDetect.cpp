@@ -37,14 +37,6 @@ void lane_detection(Mat img, vector<Point>& lane) {
 
 	//ROI
     
-    /*
-	Point point[4];
-	point[0] = Point(400, 300);
-	point[1] = Point(220, 420);
-	point[2] = Point(650, 420);
-	point[3] = Point(440, 300);
-    */
-    
     Point point[4];     
     point[0] = Point(270, 330);
     point[1] = Point(95, 430);
@@ -86,20 +78,12 @@ void lane_detection(Mat img, vector<Point>& lane) {
 
 		//���� ȸ�͸� �Ͽ� ���� ������ ���� ã�´�.
 		lane = regression(separated_lines, img);
-
-		// �¿� ������ ���� ������ �׸���.
-		//img_result = drawLine(img, lane);
-        //img_result = Lane_warning(img_result, lane);
 	}
     
     else {
         Point p = Point(-100, -100);
         lane = { p, p, p, p };
-    }
-    
-    
-    
-   // return img_result;
+    }      
 }
 
 Mat Lane_warning(Mat img_input, vector<Point> lane) {
@@ -294,9 +278,6 @@ Mat drawLine(Mat img_input, vector<Point> lane) {
         fillConvexPoly(output, points, Scalar(0, 255, 0), LINE_AA, 0);
         addWeighted(output, 0.2, img_input, 0.8, 0, img_input);
     }
-    
-    //line(img_input, lane[0], lane[1], Scalar(0, 255, 255), 5, LINE_AA);
-    //line(img_input, lane[2], lane[3], Scalar(0, 255, 255), 5, LINE_AA);
 
 	return img_input;
 }

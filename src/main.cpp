@@ -5,25 +5,10 @@
 #include "laneDetect.h"
 
 int main() 
-{
-    // setting ROI
-    /*
-    Point point[4];
-    point[0] = Point(400, 300);
-    point[1] = Point(220, 420);
-    point[2] = Point(650, 420);
-    point[3] = Point(440, 300);
-   */
-    
+{   
     
    double x[] = { 400, 220, 600, 390 };
    double y[] = { 300, 420, 420, 300 };
-
-    
-    
-    //double x[] = { 170, 150, 500, 470 };
-    //double y[] = { 320, 430, 430, 320 };
-    
 
     double m1, b1, m2, b2;
     
@@ -97,7 +82,6 @@ int main()
         auto stats_bg_sz = cv::getTextSize(stats.c_str(), cv::FONT_HERSHEY_COMPLEX_SMALL, 1, 1, &baseline);
         cv::rectangle(img_result, cv::Point(0, 0), cv::Point(stats_bg_sz.width, stats_bg_sz.height + 10), cv::Scalar(0, 0, 0), cv::FILLED);
         cv::putText(img_result, stats.c_str(), cv::Point(0, stats_bg_sz.height + 5), cv::FONT_HERSHEY_COMPLEX_SMALL, 1, cv::Scalar(255, 255, 255));
-        //cv::rectangle(img_result, cv::Point(x[0], y[0]), cv::Point(x[3], y[2]), cv::Scalar(255, 0, 0), 3); 
         cv::imshow("result", img_result);
         
 		if (cv::waitKey(1) == 27)

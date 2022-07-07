@@ -118,7 +118,6 @@ void yoloDetect(cv::Mat frame, cv::Mat& result, cv::dnn::Net net, std::vector<st
             cv::Point p = cv::Point(rect.x+rect.width/2, rect.y+rect.height/2);
             
             if(!getState(p, m1, b1, m2, b2)) {
-               //cv::putText(frame, "SAFE", cv::Point(500, 100), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(255, 0, 0), 2, cv::LINE_AA);
                 cv::putText(frame, "CAUTION", cv::Point(500, 100), cv::FONT_HERSHEY_SIMPLEX, 1, cv::Scalar(0, 0, 255), 2, cv::LINE_AA);
             }
             /*
@@ -139,21 +138,7 @@ void yoloDetect(cv::Mat frame, cv::Mat& result, cv::dnn::Net net, std::vector<st
             cv::putText(frame, label.c_str(), cv::Point(rect.x, rect.y - baseline - 5), cv::FONT_HERSHEY_COMPLEX_SMALL, 1, cv::Scalar(0, 0, 0));
         }
     }
-    //float inference_fps = 1000.0 / std::chrono::duration_cast<std::chrono::milliseconds>(dnn_end - dnn_start).count(); // 1000 / millisecond 단위의 걸린 시간
-    //float total_fps = 1000.0 / std::chrono::duration_cast<std::chrono::milliseconds>(total_end - total_start).count(); // 1000 / millisecond 단위의 걸린 시간
-    /*
-    std::ostringstream stats_ss;
-    stats_ss << std::fixed << std::setprecision(2);
-    stats_ss << "Inference FPS: " << inference_fps << ", Total FPS: " << total_fps;
-    auto stats = stats_ss.str();
-
-    int baseline;
-    auto stats_bg_sz = cv::getTextSize(stats.c_str(), cv::FONT_HERSHEY_COMPLEX_SMALL, 1, 1, &baseline);
-    cv::rectangle(frame, cv::Point(0, 0), cv::Point(stats_bg_sz.width, stats_bg_sz.height + 10), cv::Scalar(0, 0, 0), cv::FILLED);
-    cv::putText(frame, stats.c_str(), cv::Point(0, stats_bg_sz.height + 5), cv::FONT_HERSHEY_COMPLEX_SMALL, 1, cv::Scalar(255, 255, 255));
-    */
-
     result = frame;
-    //return frame;
+
 }
 
