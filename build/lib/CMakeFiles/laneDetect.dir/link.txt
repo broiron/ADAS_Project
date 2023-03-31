@@ -1,2 +1,2 @@
-/usr/bin/ar qc liblaneDetect.a CMakeFiles/laneDetect.dir/laneDetect.cpp.o
+/usr/bin/ar qc liblaneDetect.a  CMakeFiles/laneDetect.dir/laneDetect.cpp.o
 /usr/bin/ranlib liblaneDetect.a

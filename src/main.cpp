@@ -17,15 +17,13 @@ int main()
     slope_intcpt_from2_pt(x[2], y[2], x[3], y[3], &m2, &b2);
 
 
-    //cv::VideoCapture cap("./img/test.mp4");
-    cv::VideoCapture cap(0, cv::CAP_V4L);
+    cv::VideoCapture cap("./img/test.mp4");
+    //cv::VideoCapture cap("/dev/video0", cv::CAP_V4L);
 	if (!cap.isOpened()) {
-		printf("Can't open the camera");
+		printf("Can't open the camera\n");
 		return -1;
 	}
     
-    printf("!!\n");
-
     cv::dnn::Net net = cv::dnn::readNetFromDarknet("./yolo/yolov3-tiny.cfg", "./yolo/yolov3-tiny.weights"); // cfg, weights 읽어오고 yolo network불러오기
     net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA); // 네트워크 백엔드 지정
     net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA); // 네트워크가 선호하는 타겟 디바이스 지정 -> python에서의 device정의와 유사
@@ -41,22 +39,20 @@ int main()
         std::string line;
         while (std::getline(class_file, line)) // 각 라인을 읽고 이를 위에서 정의한 classes_names vector에 하나씩 저장한다.
             class_names.push_back(line);
-    //cv::Mat img_;
     cv::Mat img;
+    cv::Mat img_;
     cv::Mat img_result;
-    //cv::Mat img_result1;
     std::vector<Point> lane;
-    //cv::Mat img_;
     printf("Before Processing\n");
 	while (1) {
         auto total_start = std::chrono::steady_clock::now();
-		cap >> img;
+		//cap >> img;
+        cap >> img_;
 
-        //cv::resize(img_, img, cv::Size(640, 480));
+        cv::resize(img_, img, cv::Size(640, 480));
 
 		if (img.empty()) {
 			printf("empty image");
-			//return 0;
 			return -1;
 		}
 		

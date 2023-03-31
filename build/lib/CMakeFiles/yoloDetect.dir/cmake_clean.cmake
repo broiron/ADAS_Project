@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/yoloDetect.dir/yoloDetect.cpp.o"
-  "CMakeFiles/yoloDetect.dir/yoloDetect.cpp.o.d"
   "libyoloDetect.a"
   "libyoloDetect.pdb"
 )

@@ -1,2 +1,2 @@
-/usr/bin/ar qc libyoloDetect.a CMakeFiles/yoloDetect.dir/yoloDetect.cpp.o
+/usr/bin/ar qc libyoloDetect.a  CMakeFiles/yoloDetect.dir/yoloDetect.cpp.o
 /usr/bin/ranlib libyoloDetect.a

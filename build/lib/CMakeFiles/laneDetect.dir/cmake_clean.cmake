@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/laneDetect.dir/laneDetect.cpp.o"
-  "CMakeFiles/laneDetect.dir/laneDetect.cpp.o.d"
   "liblaneDetect.a"
   "liblaneDetect.pdb"
 )
