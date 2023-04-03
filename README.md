@@ -23,4 +23,7 @@ In this project, We developed ADAS(Advanced Driver Assistance System) by using C
 1. Used yoloV3-tiny pre-trained weight (COCO) for car & other object detection.
 2. If the detected object's location is located within the pre-specified ROI(In front of the car), collision dager alert perform.
 
-## Testing video
+#### Features
+- This program shows us whether the driver keeps his lane and a safe distance.
+- Upper left side: Print Safe if the driver stay in his lane. Print Warning if it's not.
+- Upper right side: Print Safe if the driver keep a safe distance. Print Warning if it's not.
