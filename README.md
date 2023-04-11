@@ -11,6 +11,9 @@ In this project, We developed ADAS(Advanced Driver Assistance System) by using C
 - CMake 3.16.3
 - Used USB video camera (resolution: 640 * 480)
 
+## Test video link
+- https://youtu.be/DmDQBkF9rJg
+
 ## Project mechanism
 #### Lane detection
 1. Convert video's color space from BGR to HSV.
@@ -27,3 +30,4 @@ In this project, We developed ADAS(Advanced Driver Assistance System) by using C
 - This program shows us whether the driver keeps his lane and a safe distance.
 - Upper left side: Print Safe if the driver stay in his lane. Print Warning if it's not.
 - Upper right side: Print Safe if the driver keep a safe distance. Print Warning if it's not.
+
